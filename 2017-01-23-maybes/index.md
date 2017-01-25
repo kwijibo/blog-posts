@@ -76,12 +76,12 @@ What we _really_ want is a datatype designed to represent values that might not 
 const Just  = x => ({
     map: f => Just(f(x)),
     chain: f => f(x),
-    getOrElse: default => x
+    getOrElse: fallback => x
 })
 const Nothing = () => ({
     map: f => Nothing(),
     chain: f => Nothing(),
-    getOrElse: default => default
+    getOrElse: fallback => fallback
 })
 ```
 
@@ -138,7 +138,7 @@ If you're familiar with Promises, you might be seeing a parallel here: *Promise*
 Promises let you flatten out nested callbacks (also known as "callback hell"), Maybes let you flatten out nested `if`s ("uncertainty hell"?):
 
 ```
-const getUserName = (default='Guest') => {
+const getUserName = (fallback='Guest') => {
     const data = window.localstorage.getItem('user')
     if(data){
         const user = JSON.parse(data)
@@ -146,7 +146,7 @@ const getUserName = (default='Guest') => {
             return user.name
         } 
     }
-    return default
+    return fallback
 }
 ```
 Can become
