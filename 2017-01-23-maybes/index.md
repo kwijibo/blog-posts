@@ -2,6 +2,7 @@
 title: "Programming with Uncertain Values"
 date: "2017-01-23T22:40:32.169Z"
 path: "/uncertain-values/"
+readNext: "/maybe-empty-task/"
 ---
 
 A common pain in programming is when you need to do something with a value that might not exist. You have to wrap all the code that depends on that value inside an `if` statement checking for `null`.  It's a little bit like using node.js-style callbacks; everything that needs the value has to be nested inside the callback: 
