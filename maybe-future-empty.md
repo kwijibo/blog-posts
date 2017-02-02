@@ -1,6 +1,7 @@
 ---
 title: "How to handle an uncertain Future, with Task.empty"
-path: "/maybe-empty-task/"
+path: "/maybe-empty-task"
+readNext: "/task-maybes/"
 ---
   
 In my previous post [introducing Maybe](/uncertain-values/), I ended with an example using Promises, mentioning that [Task](http://docs.folktalejs.org/en/latest/api/data/task/Task.html) can be a useful alternative to javascript Promises. This was the example:
