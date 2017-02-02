@@ -34,7 +34,7 @@ The tricky thing with this structure is that if we want to transform the inner v
 ```
 result.map(maybe => maybe.map(transformValue))
 ```
-which would be truly terrible.
+which would be terrible.
 
 And if we unwrap the Maybe with `.getOrElse(value)` we have to provide a default value, and then we map directly over either the result if it exists, or the default if it doesn't. But we don't want to do anything if we have a Nothing. What we really want is to turn our outer Task into an empty Task if it contains a Nothing, and a Task containing a result if it contains a Just of a result. 
 
